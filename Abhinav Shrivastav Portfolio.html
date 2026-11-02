@@ -1,0 +1,589 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Abhinav Shrivastav Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Abhinav Shrivastav is a full-stack developer in Seoul with React, Next.js, Node.js and PostgreSQL experience, pursuing an MBA at IGSE University. Open to developer roles in South Korea and remote.">
+<meta property="og:title" content="Abhinav Shrivastav | Full-Stack Developer in Seoul">
+<meta property="og:description" content="React, Next.js, Node.js and PostgreSQL. Web apps, REST APIs and AI-integrated products, with an MBA's business perspective.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single left-aligned reading column (max 1080px). Hero with fact strip, then projects as stacked rows, then a two-column skills/business block, timeline, contact. */
+:root {
+  --bg: #F5F6F8;
+  --surface: #FFFFFF;
+  --fg: #0F1424;
+  --muted: #566074;
+  --line: #DCE0E8;
+  --accent: #2540D9;
+  --accent-soft: #E7EBFC;
+  --on-accent: #FFFFFF;
+  --ok: #0E7A4F;
+  --font-display: "Bricolage Grotesque", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0C0F1A; --surface: #131827; --fg: #EDEFF6; --muted: #98A0B5; --line: #232A3F;
+    --accent: #8EA2FF; --accent-soft: #1A2348; --on-accent: #0C0F1A; --ok: #4FD39A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0C0F1A; --surface: #131827; --fg: #EDEFF6; --muted: #98A0B5; --line: #232A3F;
+  --accent: #8EA2FF; --accent-soft: #1A2348; --on-accent: #0C0F1A; --ok: #4FD39A;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  background: var(--bg); color: var(--fg);
+  font: 400 16px/1.65 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1080px; margin: 0 auto; }
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--accent); color: var(--on-accent); padding: 8px 12px; border-radius: 4px; z-index: 40; }
+.skip:focus { left: 8px; }
+
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; letter-spacing: -0.02em; line-height: 1.1; }
+.eyebrow { font: 500 12px/1 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* header */
+header.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))) ; padding-inline: max(16px, env(safe-area-inset-left, 0px)); }
+.bar-in { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; gap: 20px; height: 56px; }
+.brand { font: 700 17px var(--font-display); text-decoration: none; letter-spacing: -0.01em; white-space: nowrap; }
+nav.main { display: flex; gap: 20px; margin-left: auto; font-size: 14px; }
+nav.main a { text-decoration: none; color: var(--muted); padding: 6px 0; }
+nav.main a:hover { color: var(--fg); }
+.icon-btn { background: none; border: 1px solid var(--line); color: var(--fg); width: 34px; height: 34px; border-radius: 8px; cursor: pointer; display: grid; place-items: center; font-size: 15px; }
+.icon-btn:hover { border-color: var(--accent); }
+.tools { display: flex; gap: 8px; }
+.lang-btn { background: none; border: 1px solid var(--line); color: var(--fg); height: 34px; padding: 0 12px; border-radius: 8px; cursor: pointer; font: 600 13px var(--font-body); }
+.lang-btn:hover { border-color: var(--accent); }
+html[lang="ko"] body { word-break: keep-all; }
+html[lang="ko"] h1 { max-width: 20ch; line-height: 1.2; }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; gap: 8px; font: 600 15px/1 var(--font-body); padding: 13px 18px; border-radius: 8px; text-decoration: none; border: 1px solid var(--line); background: var(--surface); color: var(--fg); cursor: pointer; transition: border-color .15s, transform .15s; }
+.btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn.small { padding: 9px 12px; font-size: 13px; }
+
+/* hero */
+.hero { padding-block: clamp(40px, 8vw, 96px) 48px; display: grid; gap: 28px; }
+.status { display: inline-flex; align-items: center; gap: 8px; font: 500 13px var(--font-mono); color: var(--muted); }
+.status i { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 22%, transparent); }
+h1 { font-size: clamp(36px, 6.4vw, 68px); font-weight: 700; max-width: 17ch; }
+h1 em { font-style: normal; color: var(--accent); }
+.lede { font-size: clamp(17px, 2vw, 20px); color: var(--muted); max-width: 62ch; margin: 0; }
+.lede strong { color: var(--fg); font-weight: 500; }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.facts { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); background: var(--surface); border-radius: 12px; overflow: hidden; }
+.facts div { padding: 16px 18px; border-right: 1px solid var(--line); min-width: 0; }
+.facts div:last-child { border-right: 0; }
+.facts dt { font: 500 11px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.facts dd { margin: 0; font-weight: 500; font-size: 15px; line-height: 1.35; }
+.stackline { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font: 500 12.5px var(--font-mono); padding: 6px 10px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+.chip.plain { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+
+/* sections */
+section { padding-block: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line); }
+.sec-head { display: grid; gap: 10px; margin-bottom: 32px; }
+h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; }
+.sec-sub { color: var(--muted); max-width: 60ch; margin: 0; }
+
+/* projects */
+.projects { display: grid; gap: 16px; }
+.proj { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: clamp(18px, 3vw, 28px); display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px 40px; }
+.proj > * { min-width: 0; }
+.proj h3 { font-size: 24px; margin-bottom: 8px; }
+.proj p { margin: 0 0 14px; color: var(--muted); }
+.proj p b { color: var(--fg); font-weight: 600; }
+.proj .side { display: grid; gap: 16px; align-content: start; }
+.contrib { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 14.5px; }
+.contrib li { padding-left: 18px; position: relative; }
+.contrib li::before { content: ""; position: absolute; left: 0; top: .6em; width: 8px; height: 1px; background: var(--accent); }
+.result { font: 400 13px/1.5 var(--font-mono); border: 1px dashed var(--line); border-radius: 8px; padding: 10px 12px; color: var(--muted); }
+.result b { color: var(--fg); font-weight: 500; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* skills + business */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.two > * { min-width: 0; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: clamp(18px, 3vw, 28px); }
+.skill-row { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding-block: 12px; border-top: 1px solid var(--line); align-items: start; }
+.skill-row:first-of-type { border-top: 0; padding-top: 0; }
+.skill-row dt { font: 500 12px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 5px; }
+.skill-row dd { margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.pill { font-size: 14px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; }
+.panel h3 { font-size: 22px; margin-bottom: 14px; }
+.bizlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.bizlist li { display: grid; gap: 2px; }
+.bizlist b { font-weight: 600; }
+.bizlist span { color: var(--muted); font-size: 15px; }
+
+/* timeline */
+.tl { display: grid; gap: 0; }
+.tl-item { display: grid; grid-template-columns: 200px 1fr; gap: 8px 32px; padding-block: 24px; border-top: 1px solid var(--line); }
+.tl-item:first-child { border-top: 0; padding-top: 0; }
+.tl-item > * { min-width: 0; }
+.tl-when { font: 500 13px var(--font-mono); color: var(--muted); padding-top: 4px; }
+.tl-item h3 { font-size: 20px; margin-bottom: 4px; }
+.tl-item .org { color: var(--muted); margin: 0 0 10px; }
+.tl-item ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; color: var(--muted); }
+.todo { border-bottom: 1px dashed var(--muted); }
+
+/* contact */
+.contact { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: clamp(22px, 4vw, 40px); display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px 48px; }
+.contact > * { min-width: 0; }
+.contact h2 { margin-bottom: 12px; }
+.contact p { color: var(--muted); margin: 0 0 20px; }
+.rows { display: grid; gap: 0; align-content: start; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 14px; border-top: 1px solid var(--line); min-width: 0; }
+.row:first-child { border-top: 0; padding-top: 0; }
+.row small { font: 500 11px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 2px; }
+.row span.v { overflow-wrap: anywhere; user-select: all; font-weight: 500; }
+footer { padding-block: 32px 48px; color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; border-top: 1px solid var(--line); }
+
+@keyframes rise { from { opacity: .001; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.hero > * { animation: rise .5s ease both; }
+.hero > *:nth-child(2) { animation-delay: .05s; } .hero > *:nth-child(3) { animation-delay: .1s; }
+.hero > *:nth-child(4) { animation-delay: .15s; } .hero > *:nth-child(5) { animation-delay: .2s; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+@media (max-width: 860px) {
+  .facts { grid-template-columns: 1fr 1fr; }
+  .facts div:nth-child(2) { border-right: 0; }
+  .facts div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .proj, .two, .contact { grid-template-columns: 1fr; }
+  .tl-item { grid-template-columns: 1fr; }
+  nav.main { display: none; }
+  .bar-in { justify-content: space-between; }
+}
+@media (max-width: 480px) {
+  .skill-row { grid-template-columns: 1fr; gap: 6px; }
+  .skill-row dt { padding-top: 0; }
+  .btn { flex: 1 1 100%; justify-content: center; }
+  .btn.small { flex: 0 1 auto; }
+}
+</style>
+
+<a class="skip" href="#projects">Skip to projects</a>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">Abhinav Shrivastav</a>
+    <nav class="main" aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#business">Business</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="lang-btn" id="lang" type="button" aria-label="Switch language to Korean" lang="ko">한국어</button>
+      <button class="icon-btn" id="theme" type="button" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <span class="status"><i aria-hidden="true"></i> Open to roles in South Korea · Seoul · Remote</span>
+    <h1>Full-stack developer who ships <em>fast, reliable</em> web products.</h1>
+    <p class="lede">I build responsive React and Next.js interfaces, Node.js REST APIs and PostgreSQL-backed systems, including <strong>AI-integrated features</strong>. I am also completing an <strong>MBA at IGSE University</strong>, so I can connect technical decisions to business goals.</p>
+    <div class="cta">
+      <a class="btn primary" href="#contact" id="resume-link">Download resume (PDF)</a>
+      <a class="btn" href="#contact">Schedule an interview</a>
+      <a class="btn" href="#contact">Email me</a>
+    </div>
+    <dl class="facts" style="margin:0">
+      <div><dt>Location</dt><dd>Seoul, South Korea</dd></div>
+      <div><dt>Experience</dt><dd>~10 months full-stack</dd></div>
+      <div><dt>Education</dt><dd>MBA, IGSE University</dd></div>
+      <div><dt>Looking for</dt><dd>Full-stack, frontend, tech business</dd></div>
+    </dl>
+    <div class="stackline" aria-label="Core stack">
+      <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PostgreSQL</span><span class="chip">Tailwind CSS</span><span class="chip plain">Git / GitHub</span><span class="chip plain">Vercel · Render</span>
+    </div>
+  </div>
+
+  <section id="projects">
+    <div class="sec-head">
+      <span class="eyebrow">Selected work</span>
+      <h2>Projects</h2>
+      <p class="sec-sub">Four production-style applications, each deployed with a live demo and public source.</p>
+    </div>
+    <div class="projects">
+
+      <article class="proj">
+        <div>
+          <h3>E-commerce Store</h3>
+          <p><b>Problem:</b> small sellers need a storefront that loads quickly and handles real orders. <b>Built:</b> a full storefront with product catalogue, cart, checkout flow, user accounts and an admin view for managing inventory.</p>
+          <div class="stackline"><span class="chip">Next.js</span><span class="chip">Tailwind CSS</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PostgreSQL</span></div>
+        </div>
+        <div class="side">
+          <ul class="contrib">
+            <li>Designed the relational schema for products, orders and users</li>
+            <li>Built the REST API with validation and authentication</li>
+            <li>Made the UI responsive from phone to desktop</li>
+          </ul>
+          <div class="result"><b>Result:</b> <span class="todo">[add metric, e.g. Lighthouse score or order flow time]</span></div>
+          <div class="links"><a class="btn small primary" href="https://github.com/" target="_blank" rel="noopener">Live demo</a><a class="btn small" href="https://github.com/" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div>
+          <h3>Kanban Project Board</h3>
+          <p><b>Problem:</b> teams lose track of work spread across chats and spreadsheets. <b>Built:</b> a board with columns, draggable task cards, assignments and persistent state, so a team sees status at a glance.</p>
+          <div class="stackline"><span class="chip">React</span><span class="chip">JavaScript</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PostgreSQL</span></div>
+        </div>
+        <div class="side">
+          <ul class="contrib">
+            <li>Implemented drag-and-drop with optimistic UI updates</li>
+            <li>Modelled boards, columns and tasks with ordered positions</li>
+            <li>Exposed CRUD endpoints with consistent error handling</li>
+          </ul>
+          <div class="result"><b>Result:</b> <span class="todo">[add metric, e.g. users, tasks managed]</span></div>
+          <div class="links"><a class="btn small primary" href="https://github.com/" target="_blank" rel="noopener">Live demo</a><a class="btn small" href="https://github.com/" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div>
+          <h3>Chat Application</h3>
+          <p><b>Problem:</b> conversations need to feel instant and survive a page refresh. <b>Built:</b> a messaging app with user accounts, conversations and stored message history.</p>
+          <div class="stackline"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PostgreSQL</span><span class="chip">Tailwind CSS</span></div>
+        </div>
+        <div class="side">
+          <ul class="contrib">
+            <li>Built the messaging API and message history storage</li>
+            <li>Handled authentication and per-user conversations</li>
+            <li>Created a mobile-friendly chat interface</li>
+          </ul>
+          <div class="result"><b>Result:</b> <span class="todo">[add metric, e.g. message latency, concurrent users]</span></div>
+          <div class="links"><a class="btn small primary" href="https://github.com/" target="_blank" rel="noopener">Live demo</a><a class="btn small" href="https://github.com/" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div>
+          <h3>AI-Powered Web App</h3>
+          <p><b>Problem:</b> users want AI help inside a normal workflow, not a separate chatbot. <b>Built:</b> a web application that sends user input to a language model through a server-side API and returns structured results in the interface.</p>
+          <div class="stackline"><span class="chip">Next.js</span><span class="chip">Node.js</span><span class="chip">LLM API</span><span class="chip">PostgreSQL</span><span class="chip">Vercel</span></div>
+        </div>
+        <div class="side">
+          <ul class="contrib">
+            <li>Kept API keys on the server and validated all inputs</li>
+            <li>Designed prompts and response handling for consistent output</li>
+            <li>Deployed on Vercel with environment-based configuration</li>
+          </ul>
+          <div class="result"><b>Result:</b> <span class="todo">[add metric, e.g. time saved per task]</span></div>
+          <div class="links"><a class="btn small primary" href="https://github.com/" target="_blank" rel="noopener">Live demo</a><a class="btn small" href="https://github.com/" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head">
+      <span class="eyebrow">Technical skills</span>
+      <h2>Stack I work in</h2>
+    </div>
+    <div class="panel">
+      <dl style="margin:0">
+        <div class="skill-row"><dt>Frontend</dt><dd><span class="pill">React.js</span><span class="pill">Next.js</span><span class="pill">JavaScript</span><span class="pill">Tailwind CSS</span><span class="pill">HTML / CSS</span></dd></div>
+        <div class="skill-row"><dt>Backend</dt><dd><span class="pill">Node.js</span><span class="pill">Express.js</span><span class="pill">REST APIs</span><span class="pill">Authentication</span></dd></div>
+        <div class="skill-row"><dt>Database</dt><dd><span class="pill">PostgreSQL</span><span class="pill">Schema design</span><span class="pill">SQL queries</span></dd></div>
+        <div class="skill-row"><dt>AI</dt><dd><span class="pill">LLM API integration</span><span class="pill">Prompt design</span></dd></div>
+        <div class="skill-row"><dt>Tools</dt><dd><span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">Vercel</span><span class="pill">Render</span></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="business">
+    <div class="sec-head">
+      <span class="eyebrow">Technology and management</span>
+      <h2>Developer with an MBA</h2>
+      <p class="sec-sub">I write code and I understand why a team is building it. That helps in product discussions, estimates and communication with non-technical colleagues.</p>
+    </div>
+    <div class="two">
+      <div class="panel">
+        <h3>What this adds to a dev team</h3>
+        <ul class="bizlist">
+          <li><b>Product thinking</b><span>I ask who the user is and what outcome matters before choosing a solution.</span></li>
+          <li><b>Clear communication</b><span>I explain trade-offs, scope and timelines to managers and clients in plain language.</span></li>
+          <li><b>Cross-border readiness</b><span>I study and work in an international setting in Seoul and collaborate across time zones.</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Roles I am targeting</h3>
+        <ul class="bizlist">
+          <li><b>Full-stack and frontend developer</b><span>Korean companies and international startups.</span></li>
+          <li><b>Technology business roles</b><span>Product, business development, technical operations.</span></li>
+          <li><b>Remote teams</b><span>Comfortable with async work, Git workflows and written updates.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head">
+      <span class="eyebrow">Background</span>
+      <h2>Experience and education</h2>
+    </div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-when"><span class="todo">[Start year]</span> to present</div>
+        <div>
+          <h3>Full-Stack Developer</h3>
+          <p class="org"><span class="todo">[Company or Freelance / Independent]</span> · About 10 months</p>
+          <ul>
+            <li>Built and deployed four full-stack applications from database to user interface.</li>
+            <li>Designed REST APIs and PostgreSQL schemas for e-commerce, task management and messaging.</li>
+            <li>Integrated language model APIs into a production-style web application.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">In progress</div>
+        <div>
+          <h3>Master of Business Administration</h3>
+          <p class="org">IGSE University · Seoul, South Korea</p>
+          <ul><li>Studying management, strategy and business operations alongside software development.</li></ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when"><span class="todo">[Year]</span></div>
+        <div>
+          <h3>Certifications</h3>
+          <p class="org"><span class="todo">[Certification name]</span> · <span class="todo">[Issuer]</span></p>
+          <ul><li><span class="todo">[Add a second certification or course, or remove this block]</span></li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <span class="eyebrow">Let's talk</span>
+        <h2 style="margin-top:10px">Hiring in Korea or remote?</h2>
+        <p>I can start conversations quickly. Send an email or book a short call, and I will reply within one business day (KST).</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:abhinavshrivastav147@gmail.com">Email me</a>
+          <a class="btn" href="https://calendly.com/" target="_blank" rel="noopener">Book a call</a>
+        </div>
+      </div>
+      <div class="rows">
+        <div class="row"><div><small>Email</small><span class="v">abhinavshrivastav147@gmail.com</span></div><button class="btn small" type="button" data-copy="abhinavshrivastav147@gmail.com">Copy</button></div>
+        <div class="row"><div><small>GitHub</small><a class="v" href="https://github.com/" target="_blank" rel="noopener">github.com/your-username</a></div></div>
+        <div class="row"><div><small>LinkedIn</small><a class="v" href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/your-profile</a></div></div>
+        <div class="row"><div><small>Resume</small><a class="v" href="https://drive.google.com/" target="_blank" rel="noopener">Abhinav-Shrivastav-Resume.pdf</a></div></div>
+        <div class="row"><div><small>Based in</small><span class="v">Seoul, KST (UTC+9)</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Abhinav Shrivastav</span>
+    <span>English · 한국어</span>
+  </footer>
+</main>
+
+<script>
+(function () {
+  var KO = {
+    "Skip to projects": "프로젝트로 건너뛰기",
+    "Projects": "프로젝트", "Skills": "기술", "Business": "비즈니스", "Experience": "경력", "Contact": "연락처",
+    "Open to roles in South Korea · Seoul · Remote": "한국 · 서울 · 원격 채용 지원 가능",
+    "Full-stack developer who ships": "풀스택 개발자,",
+    "fast, reliable": "빠르고 안정적인",
+    "web products.": "웹 서비스를 만듭니다.",
+    "I build responsive React and Next.js interfaces, Node.js REST APIs and PostgreSQL-backed systems, including": "반응형 React·Next.js 인터페이스, Node.js REST API, PostgreSQL 기반 시스템을 개발하며",
+    "AI-integrated features": "AI 연동 기능",
+    ". I am also completing an": "도 구현합니다. 현재",
+    "MBA at IGSE University": "IGSE University MBA",
+    ", so I can connect technical decisions to business goals.": "를 이수 중이어서 기술적 의사결정을 비즈니스 목표와 연결할 수 있습니다.",
+    "Download resume (PDF)": "이력서 다운로드 (PDF)",
+    "Schedule an interview": "면접 일정 잡기",
+    "Email me": "이메일 보내기",
+    "Location": "위치", "Seoul, South Korea": "대한민국 서울",
+    "~10 months full-stack": "풀스택 약 10개월",
+    "Education": "학력", "MBA, IGSE University": "MBA, IGSE University",
+    "Looking for": "희망 직무", "Full-stack, frontend, tech business": "풀스택, 프론트엔드, 기술 비즈니스",
+    "Selected work": "주요 작업",
+    "Four production-style applications, each deployed with a live demo and public source.": "실제 서비스 수준으로 구현하고 라이브 데모와 공개 소스와 함께 배포한 네 가지 애플리케이션입니다.",
+    "E-commerce Store": "이커머스 스토어",
+    "Kanban Project Board": "칸반 프로젝트 보드",
+    "Chat Application": "채팅 애플리케이션",
+    "AI-Powered Web App": "AI 기반 웹 앱",
+    "Problem:": "문제:", "Built:": "구현:", "Result:": "성과:",
+    "small sellers need a storefront that loads quickly and handles real orders.": "소규모 판매자에게는 빠르게 로딩되고 실제 주문을 처리하는 쇼핑몰이 필요합니다.",
+    "a full storefront with product catalogue, cart, checkout flow, user accounts and an admin view for managing inventory.": "상품 카탈로그, 장바구니, 결제 흐름, 사용자 계정, 재고 관리용 관리자 화면을 갖춘 쇼핑몰.",
+    "teams lose track of work spread across chats and spreadsheets.": "작업이 채팅과 스프레드시트에 흩어져 팀이 진행 상황을 놓치곤 합니다.",
+    "a board with columns, draggable task cards, assignments and persistent state, so a team sees status at a glance.": "칼럼, 드래그 가능한 작업 카드, 담당자 지정, 저장되는 상태를 갖춘 보드로 팀이 한눈에 현황을 파악할 수 있습니다.",
+    "conversations need to feel instant and survive a page refresh.": "대화는 즉각적으로 느껴져야 하고 새로고침 후에도 유지되어야 합니다.",
+    "a messaging app with user accounts, conversations and stored message history.": "사용자 계정, 대화방, 저장된 메시지 기록을 갖춘 메시징 앱.",
+    "users want AI help inside a normal workflow, not a separate chatbot.": "사용자는 별도의 챗봇이 아니라 일상적인 업무 흐름 안에서 AI의 도움을 원합니다.",
+    "a web application that sends user input to a language model through a server-side API and returns structured results in the interface.": "서버 측 API를 통해 사용자 입력을 언어 모델에 보내고 구조화된 결과를 화면에 보여주는 웹 애플리케이션.",
+    "Designed the relational schema for products, orders and users": "상품, 주문, 사용자를 위한 관계형 스키마 설계",
+    "Built the REST API with validation and authentication": "검증과 인증을 갖춘 REST API 구축",
+    "Made the UI responsive from phone to desktop": "스마트폰부터 데스크톱까지 대응하는 반응형 UI 구현",
+    "Implemented drag-and-drop with optimistic UI updates": "낙관적 UI 업데이트를 적용한 드래그 앤 드롭 구현",
+    "Modelled boards, columns and tasks with ordered positions": "순서 정보를 가진 보드, 칼럼, 작업 데이터 모델링",
+    "Exposed CRUD endpoints with consistent error handling": "일관된 오류 처리를 갖춘 CRUD 엔드포인트 제공",
+    "Built the messaging API and message history storage": "메시지 API와 메시지 기록 저장소 구축",
+    "Handled authentication and per-user conversations": "인증 및 사용자별 대화 처리",
+    "Created a mobile-friendly chat interface": "모바일 친화적인 채팅 인터페이스 제작",
+    "Kept API keys on the server and validated all inputs": "API 키를 서버에서만 관리하고 모든 입력을 검증",
+    "Designed prompts and response handling for consistent output": "일관된 출력을 위한 프롬프트와 응답 처리 설계",
+    "Deployed on Vercel with environment-based configuration": "환경별 설정으로 Vercel에 배포",
+    "[add metric, e.g. Lighthouse score or order flow time]": "[지표 추가: 예) Lighthouse 점수, 주문 처리 시간]",
+    "[add metric, e.g. users, tasks managed]": "[지표 추가: 예) 사용자 수, 관리된 작업 수]",
+    "[add metric, e.g. message latency, concurrent users]": "[지표 추가: 예) 메시지 지연 시간, 동시 접속자 수]",
+    "[add metric, e.g. time saved per task]": "[지표 추가: 예) 작업당 절감 시간]",
+    "Live demo": "라이브 데모",
+    "Technical skills": "기술 역량", "Stack I work in": "사용 기술 스택",
+    "Frontend": "프론트엔드", "Backend": "백엔드", "Database": "데이터베이스", "Tools": "도구",
+    "Authentication": "인증", "Schema design": "스키마 설계", "SQL queries": "SQL 쿼리",
+    "LLM API integration": "LLM API 연동", "Prompt design": "프롬프트 설계",
+    "Technology and management": "기술과 경영",
+    "Developer with an MBA": "MBA를 가진 개발자",
+    "I write code and I understand why a team is building it. That helps in product discussions, estimates and communication with non-technical colleagues.": "저는 코드를 작성할 뿐 아니라 팀이 왜 그것을 만드는지 이해합니다. 이는 제품 논의, 일정 추정, 비개발 동료와의 소통에 도움이 됩니다.",
+    "What this adds to a dev team": "개발팀에 더하는 가치",
+    "Product thinking": "제품 중심 사고",
+    "I ask who the user is and what outcome matters before choosing a solution.": "해결책을 정하기 전에 사용자가 누구이며 어떤 결과가 중요한지 먼저 묻습니다.",
+    "Clear communication": "명확한 소통",
+    "I explain trade-offs, scope and timelines to managers and clients in plain language.": "관리자와 고객에게 트레이드오프, 범위, 일정을 쉬운 말로 설명합니다.",
+    "Cross-border readiness": "글로벌 협업 역량",
+    "I study and work in an international setting in Seoul and collaborate across time zones.": "서울의 국제적인 환경에서 공부하고 일하며 시차가 있는 팀과도 협업합니다.",
+    "Roles I am targeting": "지원 희망 직무",
+    "Full-stack and frontend developer": "풀스택·프론트엔드 개발자",
+    "Korean companies and international startups.": "한국 기업 및 해외 스타트업.",
+    "Technology business roles": "기술 비즈니스 직무",
+    "Product, business development, technical operations.": "제품, 사업 개발, 기술 운영.",
+    "Remote teams": "원격 팀",
+    "Comfortable with async work, Git workflows and written updates.": "비동기 업무, Git 워크플로, 글로 하는 업데이트에 익숙합니다.",
+    "Background": "배경",
+    "Experience and education": "경력 및 학력",
+    "[Start year]": "[시작 연도]", "to present": "~ 현재",
+    "Full-Stack Developer": "풀스택 개발자",
+    "[Company or Freelance / Independent]": "[회사명 또는 프리랜서]",
+    "· About 10 months": "· 약 10개월",
+    "Built and deployed four full-stack applications from database to user interface.": "데이터베이스부터 사용자 인터페이스까지 풀스택 애플리케이션 4개를 구축하고 배포했습니다.",
+    "Designed REST APIs and PostgreSQL schemas for e-commerce, task management and messaging.": "이커머스, 작업 관리, 메시징을 위한 REST API와 PostgreSQL 스키마를 설계했습니다.",
+    "Integrated language model APIs into a production-style web application.": "실서비스 수준의 웹 애플리케이션에 언어 모델 API를 연동했습니다.",
+    "In progress": "진행 중",
+    "Master of Business Administration": "경영학 석사 (MBA)",
+    "IGSE University · Seoul, South Korea": "IGSE University · 대한민국 서울",
+    "Studying management, strategy and business operations alongside software development.": "소프트웨어 개발과 병행하여 경영, 전략, 비즈니스 운영을 공부하고 있습니다.",
+    "[Year]": "[연도]", "Certifications": "자격증",
+    "[Certification name]": "[자격증 이름]", "[Issuer]": "[발급 기관]",
+    "[Add a second certification or course, or remove this block]": "[두 번째 자격증이나 수료 과정을 추가하거나 이 블록을 삭제하세요]",
+    "Let's talk": "문의하기",
+    "Hiring in Korea or remote?": "한국 또는 원격 채용 중이신가요?",
+    "I can start conversations quickly. Send an email or book a short call, and I will reply within one business day (KST).": "바로 대화를 시작할 수 있습니다. 이메일을 보내시거나 짧은 통화를 예약해 주시면 영업일 기준 1일 이내(KST)에 답변드리겠습니다.",
+    "Book a call": "통화 예약",
+    "Email": "이메일", "Resume": "이력서", "Based in": "거주지",
+    "Seoul, KST (UTC+9)": "서울, KST (UTC+9)",
+    "Copy": "복사", "Copied": "복사됨", "Select text": "텍스트 선택"
+  };
+  var orig = new WeakMap();
+  var lang = "en";
+  var SKIP = { SCRIPT: 1, STYLE: 1, TITLE: 1, NOSCRIPT: 1 };
+
+  function translate(root) {
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var n;
+    while ((n = w.nextNode())) {
+      var p = n.parentNode;
+      if (!p || SKIP[p.nodeName] || p.id === "lang") continue;
+      if (!n.data.trim()) continue;
+      if (!orig.has(n)) orig.set(n, n.data);
+      var o = orig.get(n);
+      var key = o.trim();
+      if (lang === "ko" && KO[key]) {
+        var lead = o.match(/^\s*/)[0], trail = o.match(/\s*$/)[0];
+        n.data = lead + KO[key] + trail;
+      } else {
+        n.data = o;
+      }
+    }
+  }
+
+  var META = {
+    en: "Abhinav Shrivastav is a full-stack developer in Seoul with React, Next.js, Node.js and PostgreSQL experience, pursuing an MBA at IGSE University. Open to developer roles in South Korea and remote.",
+    ko: "서울 기반 풀스택 개발자 Abhinav Shrivastav. React, Next.js, Node.js, PostgreSQL 경험을 갖추고 IGSE University에서 MBA 과정 중이며, 한국 및 원격 개발자 직무를 찾고 있습니다."
+  };
+
+  function setLang(next, save) {
+    lang = next;
+    document.documentElement.setAttribute("lang", next);
+    translate(document.body);
+    var btn = document.getElementById("lang");
+    btn.textContent = next === "ko" ? "EN" : "한국어";
+    btn.setAttribute("lang", next === "ko" ? "en" : "ko");
+    btn.setAttribute("aria-label", next === "ko" ? "Switch language to English" : "한국어로 보기");
+    var ko = next === "ko";
+    var t = document.getElementById("theme");
+    t.setAttribute("aria-label", ko ? "라이트·다크 테마 전환" : "Toggle light and dark theme");
+    t.setAttribute("title", ko ? "테마 전환" : "Toggle theme");
+    var nav = document.querySelector("nav.main"); if (nav) nav.setAttribute("aria-label", ko ? "섹션" : "Sections");
+    var st = document.querySelector(".stackline"); if (st) st.setAttribute("aria-label", ko ? "핵심 기술" : "Core stack");
+    var m = document.querySelector('meta[name="description"]'); if (m) m.setAttribute("content", META[next]);
+    if (save) { try { localStorage.setItem("lang", next); } catch (e) {} }
+  }
+
+  document.getElementById("lang").addEventListener("click", function () { setLang(lang === "ko" ? "en" : "ko", true); });
+
+  // translate fresh text such as the copy button's "Copied" feedback
+  document.querySelectorAll("[data-copy]").forEach(function (b) {
+    new MutationObserver(function () { translate(b); }).observe(b, { childList: true });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem("lang"); } catch (e) {}
+  if (!saved && /^ko/i.test(navigator.language || "")) saved = "ko";
+  if (saved === "ko") setLang("ko", false);
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Abhinav Shrivastav","jobTitle":"Full-Stack Developer","email":"abhinavshrivastav147@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"alumniOf":{"@type":"CollegeOrUniversity","name":"IGSE University"},"knowsAbout":["React","Next.js","Node.js","Express.js","PostgreSQL","Tailwind CSS","REST APIs"]}
+</script>
+<script>
+(function () {
+  var root = document.documentElement;
+  try { var t = localStorage.getItem("theme"); if (t) root.setAttribute("data-theme", t); } catch (e) {}
+  document.getElementById("theme").addEventListener("click", function () {
+    var cur = root.getAttribute("data-theme");
+    if (!cur) cur = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    var next = cur === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+  document.querySelectorAll("[data-copy]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var text = b.getAttribute("data-copy");
+      var done = function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1600); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { b.textContent = "Select text"; });
+      } else { b.textContent = "Select text"; }
+    });
+  });
+})();
+</script>
+
+</body></html>
