@@ -1,15 +1,24 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Abhinav Shrivastav Portfolio</title>
+<title>Abhinav Shrivastav | Full-Stack Developer in Seoul</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Abhinav Shrivastav is a full-stack developer in Seoul with React, Next.js, Node.js and PostgreSQL experience, pursuing an MBA at IGSE University. Open to developer roles in South Korea and remote.">
+<meta name="description" content="Abhinav Shrivastav is a Seoul-based full-stack developer building responsive web apps, REST APIs and AI-integrated products with React, Next.js, Node.js and PostgreSQL. Open to roles in South Korea and remote.">
+<meta name="robots" content="index, follow">
 <meta property="og:title" content="Abhinav Shrivastav | Full-Stack Developer in Seoul">
-<meta property="og:description" content="React, Next.js, Node.js and PostgreSQL. Web apps, REST APIs and AI-integrated products, with an MBA's business perspective.">
+<meta property="og:description" content="Seoul-based full-stack developer building web apps, REST APIs and AI-integrated products with React, Next.js, Node.js and PostgreSQL.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="assets/mypic.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Abhinav Shrivastav | Full-Stack Developer in Seoul">
+<meta name="twitter:description" content="React, Next.js, Node.js, PostgreSQL and AI-integrated web products. Based in Seoul, South Korea.">
+<meta name="twitter:image" content="assets/mypic.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Abhinav Shrivastav","jobTitle":"Full-Stack Developer","description":"Seoul-based full-stack developer building responsive web apps, REST APIs and AI-integrated products.","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"knowsAbout":["React","Next.js","Node.js","Express","PostgreSQL","AI-integrated applications"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: single left-aligned reading column (max 1080px). Hero with fact strip, then projects as stacked rows, then a two-column skills/business block, timeline, contact. */
+/* Layout: centered reading column (max 1080px). Hero with portrait and fact strip, then projects as stacked rows, then a two-column skills/business block, timeline, contact. */
 :root {
   --bg: #F5F6F8;
   --surface: #FFFFFF;
@@ -79,7 +88,10 @@ html[lang="ko"] h1 { max-width: 20ch; line-height: 1.2; }
 .btn.small { padding: 9px 12px; font-size: 13px; }
 
 /* hero */
-.hero { padding-block: clamp(40px, 8vw, 96px) 48px; display: grid; gap: 28px; }
+.hero { padding-block: clamp(40px, 8vw, 96px) 48px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 1fr); align-items: center; gap: 28px 24px; }
+.hero-copy { display: grid; gap: 28px; min-width: 0; }
+.profile-photo { display: block; grid-column: 2; grid-row: 1; justify-self: end; width: min(100%, 520px); height: auto; aspect-ratio: 1222 / 1287; object-fit: contain; object-position: center; border: 0; border-radius: 0; }
+.hero .facts, .hero > .stackline { grid-column: 1 / -1; }
 .status { display: inline-flex; align-items: center; gap: 8px; font: 500 13px var(--font-mono); color: var(--muted); }
 .status i { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 22%, transparent); }
 h1 { font-size: clamp(36px, 6.4vw, 68px); font-weight: 700; max-width: 17ch; }
@@ -162,6 +174,10 @@ footer { padding-block: 32px 48px; color: var(--muted); font-size: 13px; display
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 
 @media (max-width: 860px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .profile-photo { grid-column: 1; grid-row: 1; justify-self: center; width: min(88vw, 420px); }
+  .hero-copy { grid-row: 2; }
+  .hero .facts, .hero > .stackline { grid-column: 1; }
   .facts { grid-template-columns: 1fr 1fr; }
   .facts div:nth-child(2) { border-right: 0; }
   .facts div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
@@ -199,13 +215,16 @@ footer { padding-block: 32px 48px; color: var(--muted); font-size: 13px; display
 
 <main class="wrap" id="top">
   <div class="hero">
-    <span class="status"><i aria-hidden="true"></i> Open to roles in South Korea · Seoul · Remote</span>
-    <h1>Full-stack developer who ships <em>fast, reliable</em> web products.</h1>
-    <p class="lede">I build responsive React and Next.js interfaces, Node.js REST APIs and PostgreSQL-backed systems, including <strong>AI-integrated features</strong>. I am also completing an <strong>MBA at IGSE University</strong>, so I can connect technical decisions to business goals.</p>
-    <div class="cta">
-      <a class="btn primary" href="#contact" id="resume-link">Download resume (PDF)</a>
-      <a class="btn" href="#contact">Schedule an interview</a>
-      <a class="btn" href="#contact">Email me</a>
+    <img class="profile-photo" src="assets/mypic.png" alt="Portrait of Abhinav Shrivastav" width="144" height="144" fetchpriority="high">
+    <div class="hero-copy">
+      <span class="status"><i aria-hidden="true"></i> Open to roles in South Korea · Seoul · Remote</span>
+      <h1>Full-stack developer who ships <em>fast, reliable</em> web products.</h1>
+      <p class="lede">I build responsive React and Next.js interfaces, Node.js REST APIs and PostgreSQL-backed systems, including <strong>AI-integrated features</strong>. I am also completing an <strong>MBA at IGSE University</strong>, so I can connect technical decisions to business goals.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact" id="resume-link">Download resume (PDF)</a>
+        <a class="btn" href="#contact">Schedule an interview</a>
+        <a class="btn" href="#contact">Email me</a>
+      </div>
     </div>
     <dl class="facts" style="margin:0">
       <div><dt>Location</dt><dd>Seoul, South Korea</dd></div>
